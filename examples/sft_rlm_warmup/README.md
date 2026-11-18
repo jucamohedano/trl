@@ -9,6 +9,10 @@ Qwen3-0.6B, and saves a downloadable adapter. The two input conversations
 exercise the training path. A HotpotQA evaluation requires a separate,
 held-out sample and a warmup dataset large enough to measure transfer.
 
+The Colab smoke run completed one step on a Tesla T4 with loss `1.308437`
+and peak allocated GPU memory of `2.85 GiB`. The notebook saves the adapter
+under `/content/rlm-warmup/adapter`.
+
 To regenerate the smoke input from the published datasets, use an environment
 with `pyarrow`, `smolagents`, and OpenEnv installed. Set `OPENENV_CHECKOUT` to
 the OpenEnv checkout that provides `envs/repl_env`. The task parquet files
