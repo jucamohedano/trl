@@ -13,11 +13,14 @@ to multi-hop HotpotQA questions.
 
 ## Run in Colab
 
-Select a T4 runtime and run the cells in order. Sign in with a Hugging Face
-token that has write access to the destination model repository. The notebook
-trains on 20 questions with four rollouts each, pushes the adapter to the Hub,
-and shows the training curves in Trackio. The evaluation is configured for
-20 held-out questions.
+Select a T4 runtime and run the cells in order. Set `QUICK_RUN = True` in the
+first code cell to train on one question with four rollouts and evaluate on one
+held-out question. The full run uses 20 training and 20 held-out questions. The
+saved run took about 92 minutes for training, with evaluation afterward.
+
+The notebook shows the training curves in Trackio and saves the LoRA adapter
+in the run directory. To also upload it, set `HUB_MODEL_ID` to
+`your-username/your-model` and enter a Hugging Face token with write access.
 
 The saved notebook contains 10 paired held-out results. Base Qwen3.5-4B scored
 **4/10** and the SFT + GRPO root scored **7/10** under the same REPL harness.
